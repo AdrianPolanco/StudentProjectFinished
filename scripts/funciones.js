@@ -1,7 +1,6 @@
 import { Estudiante } from "./clase.js";
 import { mostrarTabla, estudianteEditar } from "./tabla.js";
-import swal from "sweetalert";
-import Swal from "sweetalert2";
+
 //Selecciona los elementos relevantes: INPUTS, FORMS Y SELECTOR
 const inputs = document.querySelectorAll("#form-section input");
 export { inputs };
