@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Calificaciones</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="bg-white">
+        <section class="p-5 gy-5 font-changer" id="form-section">
+            <h1 class="h1 text-center text-info mb-md-5 mb-lg-5">
+                Calificaciones
+            </h1>
+            <form
+                action=""
+                class="container row gap-5 needs-validation justify-content-md-center"
+                novalidate
+            >
+                <div
+                    class="row gy-1 align-items-center justify-content-sm-center justify-content-md-center justify-content-lg-center"
+                >
+                    <label
+                        for="nombreId"
+                        class="col-4 col-sm-2 col-md-1 me-md-4 col-lg-1 col-form-label font-changer"
+                    >
+                        <strong>Nombre:</strong>
+                    </label>
+                    <div
+                        id="divInputNombre"
+                        class="col-11 col-sm-8 col-md-6 col-lg-4"
+                    >
+                        <input
+                            type="text"
+                            class="form-control font-changer"
+                            id="nameId"
+                            placeholder="Nombre, ej: Adrian"
+                            class="fs-1"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            El campo "Nombre" es necesario
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="row gy-1 align-items-center justify-content-sm-center"
+                >
+                    <label
+                        for="apellidoId"
+                        class="col-4 col-sm-2 col-md-1 me-md-4 col-lg-1 col-form-label font-changer"
+                    >
+                        <strong>Apellido:</strong>
+                    </label>
+
+                    <div
+                        id="divInputApellido"
+                        class="col-11 col-sm-8 col-md-6 col-lg-4"
+                    >
+                        <input
+                            type="text"
+                            class="form-control font-changer"
+                            id="apellidoId"
+                            placeholder="Apellido, ej: Polanco Ferrer"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            El campo "Apellido" es necesario
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="row gy-3 align-items-center gap-md-1 justify-content-sm-center"
+                >
+                    <label
+                        for="cursoId"
+                        class="col-4 col-sm-1 me-md-2 col-form-label font-changer"
+                    >
+                        <strong>Matrícula:</strong>
+                    </label>
+
+                    <div id="divInputMatricula" class="col-9 col-sm-4 col-md-3">
+                        <input
+                            type="text"
+                            class="form-control font-changer"
+                            id="matriculaId"
+                            placeholder="Matrícula, ej: 2039-4324"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            El campo "Matrícula" es necesario
+                        </div>
+                    </div>
+
+                    <label
+                        for="cursoId"
+                        class="col-11 col-sm-1 col-form-label font-changer margin-less"
+                        id="notaLabel"
+                    >
+                        <strong>Nota:</strong>
+                    </label>
+
+                    <div id="divInputNota" class="col-6 col-sm-4 col-md-2">
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            class="form-control font-changer"
+                            id="notaId"
+                            placeholder="Nota, ej: 75"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            El campo "Nota" es necesario, la nota máxima es 100
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="row align-items-center justify-content-sm-center mb-lg-5"
+                >
+                    <label
+                        for="cursoId"
+                        class="col-4 col-sm-2 col-md-1 col-form-label font-changer"
+                    >
+                        <strong>Curso:</strong>
+                    </label>
+
+                    <div id="divInputCurso" class="col-8 col-sm-6 col-lg-4">
+                        <select
+                            class="form-select font-changer"
+                            aria-label="Default select example"
+                        >
+                            <option selected value="No-value">
+                                Selecciona el curso
+                            </option>
+                            <option value="Desarrollo Frontend">
+                                Desarrollo frontend
+                            </option>
+                            <option value="Desarrollo Backend">
+                                Desarrollo backend
+                            </option>
+                            <option value="Desarrollo Movil">
+                                Desarrollo móvil
+                            </option>
+                            <option value="Cloud Computing">
+                                Cloud Computing
+                            </option>
+                            <option value="QA Testing">QA Testing</option>
+                            <option value="Infraestructura TI">
+                                Infraestructura TI
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">
+                            El campo "Curso" es necesario
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <button
+                        class="btn btn-info fs-1 text-white col-6 col-sm-4 col-lg-3 mb-lg-5"
+                        id="noEditando"
+                    >
+                        Publicar
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section id="table-section" class="container-sm">
+            <div class="row table-responsive">
+                <table id="tableMain" class="table font-changer">
+                    <thead class="table-info">
+                        <tr id="tableHeadRow">
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Matrícula</th>
+                            <th scope="col">Curso</th>
+                            <th scope="col">Nota</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="table-group-divider">
+                        <!--  <tr >
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>20202345</td>
+                        <td>Desarrollo backend</td>
+                        <td>95</td>
+                        <td>
+                            <a href="#" class="text-info text-decoration-none"
+                                ><strong>Editar</strong></a
+                            >
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger text-decoration-none"
+                                >Eliminar</a
+                            >
+                        </td>
+                    </tr>-->
+                    </tbody>
+                    <tfoot>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Promedio</td>
+                        <td id="columnaPromedio"></td>
+                        <td></td>
+                        <td></td>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"
+        ></script>
+
+        <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+        <script src="app.js" type="module"></script>
+        <script src="scripts/validacion.js"></script>
+    </body>
+</html>
