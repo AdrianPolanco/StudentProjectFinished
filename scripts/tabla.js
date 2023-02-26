@@ -6,7 +6,7 @@ import {
     calcularPromedio,
 } from "./funciones.js";
 
-import Swal from "sweetalert2";
+//import Swal from "sweetalert2";
 
 let estudianteEditar;
 export { estudianteEditar };
